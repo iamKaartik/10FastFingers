@@ -1,7 +1,1 @@
-# TypingSpeedTest
-Test your typing speed using this lightweight website
-![image not loading!!](words1.png)
-![image not loading!!](words2.png)
-"# 10FastFingers" 
-"TypingSpeedTest-master" 
-"TypingSpeedTest-master" 
+Try out this simple webpage to check how quickly you can type.
