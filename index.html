@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="scriptLogic.js"></script>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@300&display=swap');
+
+        body {
+        font-family: poppins, sans-serif;  
+        margin: 0px;
+        width: auto;
+        height: auto;
+        background-color: whitesmoke;
+        }
+
+        #main-nav {
+        background-color: #1e1e1e;
+        padding: 17px;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        box-sizing: border-box;
+        height: 60px;
+        }
+
+        nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0px 10px;
+        padding: 5px;
+        }
+
+        #main-nav.sticky {
+        position: fixed;
+        top: 0;
+        }
+
+        nav a.active {
+        color: #1e1e1e;
+        background: white;
+        }
+
+        nav a:hover {
+        text-decoration: underline;
+        }
+
+           
+        #correctData{
+            text-align: left;
+            font-family: poppins, sans-serif; 
+            background-color: #FBF8BE;
+            color: white;
+            background-color: #2C5F2D;
+            font-size: 25px;
+            filter: blur(3px);
+            opacity: 0.5;
+        }
+        #data{
+            text-align: left;
+            background-color: whitesmoke;
+            color: #FBEAEB;
+            background-color: #97BC62FF;
+            font-family: poppins, sans-serif; 
+            font-size: 20px;
+            text-shadow: 0 0 80px;
+            filter: blur(3px);
+            opacity:0.7;
+        }
+        #data::first-letter{
+            text-decoration: line-through;
+            color: whitesmoke;
+        }
+        #score{
+            background-color: whitesmoke;
+            font-family: poppins, sans-serif; 
+            padding: 40px 20px 0px 20px;
+            text-align: center;
+            font-size: 2rem;
+            color: #1e1e1e;
+        }
+        #timer{
+            background-color: whitesmoke;
+            font-family: poppins, sans-serif;
+            padding: 40px 20px 0px 20px; 
+            text-align: center;
+            font-size: 30px;
+            font-weight: bold;
+            color: blacksmoke;
+        }
+        #result{
+            background-color: whitesmoke;
+            font-family: poppins, sans-serif; 
+            text-align: center;
+            font-size: 40px;
+            font-weight: bold;
+            padding: 40px 20px 0px 20px; 
+            color: blacksmoke;
+        }
+        .footer {
+            height: auto;
+            padding: 5rem;
+            left: 0;
+            bottom: 0;
+            background-color: #1e1e1e;
+            color: whitesmoke;
+            font-size: 20px;
+            text-align: center;
+          }
+          #hello{
+            background-color: whitesmoke;
+           
+          }
+
+        .footer-heart{text-align:center; font-family: poppins, sans-serif ;}
+
+        .footer-heart a
+        {
+            text-decoration-color: #1e1e1e;
+            border-bottom: 1px solid #1e1e1e;
+            color: whitesmoke;
+            padding-bottom: .25em; 
+            text-decoration: none;
+        }
+
+        .footer-heart a:hover
+        {
+            color:#2196f3; background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23453886' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
+            background-position: bottom;
+            background-repeat: repeat-x;
+            background-size: 20%;
+            border-bottom: 0;
+            padding-bottom: .3em;
+            text-decoration: none;
+        }
+
+        .emoji{vertical-align: middle;}
+
+        #container{
+            background-color: whitesmoke;
+            text-align: left;
+            width: auto;
+            height: 38vh;
+            padding: 10px 30px 0px 30px;
+            margin: 4px;
+            text-align: center;
+        }
+        @media (max-width: 500px) and (min-width:0px)
+        {
+            #container{
+                background-color: whitesmoke;
+                text-align: left;
+                width: auto;
+                height: 2000px;
+                padding: 10px 30px 0px 30px;
+                margin: 4px;
+                text-align: center;
+            }
+        }
+        @media (max-width: 800px) and (min-width: 400px)
+        {
+            #container{
+                background-color: whitesmoke;
+                text-align: left;
+                width: auto;
+                height: 70vh;
+                padding: 10px 30px 0px 30px;
+                margin: 4px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 1200px) and (min-width:800px)
+        {
+            #container{
+                background-color: whitesmoke;
+                text-align: left;
+                width: auto;
+                height: 60vh;
+                padding: 10px 30px 0px 30px;
+                margin: 4px;
+                text-align: center;
+            }
+        }
+    </style>
+    <title>Typing-Speed-Test</title>
+    </head>
+    <body>
+        <nav id="main-nav">
+            <a href="#header" class="active">Home</a>
+            
+        </nav>
+        <div id = "hello">
+            <p id = "score">
+                Press Enter Key to Start
+            </p>
+            
+
+            <div id = "container">
+                <span id = "correctData"></span>
+                <span id ="data"></span>
+
+                
+            
+            </div>
+
+            <div id="timer">
+                Seconds Elapsed : 0s 
+            </div>
+            <div id="result">
+            </div>
+
+            
+
+
+            <footer class="footer">
+                <p class="footer-heart">
+                    Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
+                <img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"></g-emoji> by <a href="https://github.com/iamKaartik/10FastFingers">Kartik Kumar</a>
+                </p>
+            </footer>
+        </div>
+            
+    </body>
+    </html>
